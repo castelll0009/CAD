@@ -1,0 +1,39 @@
+---
+import Logocad from '../components/logo-CAD.astro';
+import { readFileSync } from 'fs';
+
+const logoCadPath = 'src/components/logo-CAD.astro';
+const logoCadCode = readFileSync(logoCadPath, 'utf-8');
+---
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="cont-comp-cat">
+      <Logocad class='logocad-styles'><Logocad /> <!-- Muestra el componente del logo -->
+    </div>
+    <h1>Change as you need.</h1>
+    <button class="btn btn-primary">Accion</button>
+  </div>
+  <div class="hero-right">
+    <textarea readonly style="width: 100%; height: 400px;">{logoCadCode}</textarea>
+  </div>
+</div>
+
+<style>    
+  .hero {
+    display: flex;
+  }
+  .cont-comp-cat {
+  display: flex;
+  }
+  .hero-left {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .hero-right {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+</style>
