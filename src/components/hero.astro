@@ -21,12 +21,7 @@ import Logocad from '../components/logo-CAD.astro'
 
 <!-- edito and  result logical -->
 <script>
-const codeInput = document.getElementById('code-input');
-const result = document.getElementById('result');
-
-codeInput.addEventListener('input', runCode);
-
-// Get code HTML
+    // Get code HTML
 const codeHTML = `
 <style>
 	.cont-cat { color: #606365;  align-items: center; margin: 0; justify-content: center; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .cat { font-size: 3rem; text-align: center;
@@ -139,10 +134,19 @@ justify-content: flex-end;
 </div>
 
 `;
+
+const codeInput = document.getElementById('code-input');
+const result = document.getElementById('result');
+
+codeInput.addEventListener('input', runCode);
+
 // Set iframe body
 const iframe = document.getElementById('result');
 const doc = iframe.contentDocument;
 doc.body.innerHTML = codeHTML;
+
+// Set textarea body
+codeInput.innerHTML = codeHTML;
 
 
 function runCode() {
