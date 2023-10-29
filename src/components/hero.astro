@@ -1,30 +1,69 @@
 ---
-import Logocad from '../components/logo-CAD.astro';
-import { readFileSync } from 'fs';
-
-const logoCadPath = 'src/components/logo-CAD.astro';
-const logoCadCode = readFileSync(logoCadPath, 'utf-8');
+import Logocad from '../components/logo-CAD.astro'
 ---
 
 <div class="hero">
   <div class="hero-left">
-    <div class="cont-comp-cat">
-      <Logocad class='logocad-styles'><Logocad /> <!-- Muestra el componente del logo -->
+    <div class=cont-comp-cat>        
+        <!-- Result -->  
+        <iframe id="result"></iframe>
+      <!-- <Logocad class='logocad-styles'><Logocad />  -->
     </div>
-    <h1>Change as you need.</h1>
+    <h1>Bienvenido a mi sitio web</h1>
     <button class="btn btn-primary">Accion</button>
   </div>
   <div class="hero-right">
-    <textarea readonly style="width: 100%; height: 400px;">{logoCadCode}</textarea>
+    <!-- Editor -->
+    <textarea id="code-input"></textarea>
+     <!-- <pre><code> -->
   </div>
 </div>
+
+<!-- edito and  result logical -->
+<script>
+    const codeInput = document.getElementById('code-input');
+const result = document.getElementById('result');
+
+codeInput.addEventListener('input', runCode);
+
+function runCode() {
+
+  // Get input value
+  const code = codeInput.value; 
+  
+  // Create iframe document
+  const doc = result.contentDocument;
+  doc.body.innerHTML = '';
+  
+  // Add HTML
+  doc.body.innerHTML = code;
+  
+  // Add CSS
+  const styleTag = doc.createElement('style');
+  styleTag.textContent = addCSS();
+  doc.head.appendChild(styleTag);
+
+  // Add JS 
+  const scriptTag = doc.createElement('script');
+  scriptTag.textContent = addJS();
+  doc.body.appendChild(scriptTag);
+
+}
+function addCSS() {
+  // Return CSS input value
+}
+
+function addJS() {
+  // Sandbox JS code and return
+}
+</script>
 
 <style>    
   .hero {
     display: flex;
   }
-  .cont-comp-cat {
-  display: flex;
+  .cont-comp-cat{
+    display
   }
   .hero-left {
     flex: 1;
@@ -36,4 +75,14 @@ const logoCadCode = readFileSync(logoCadPath, 'utf-8');
     padding: 20px;
     background-color: #f0f0f0;
   }
+
+  #code-input {
+  width: 50%;
+  height: 300px;
+}
+
+#result {
+  width: 50%;
+  height: 300px;
+}
 </style>
