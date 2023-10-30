@@ -1,5 +1,6 @@
 ---
 import Logocad from '../components/logo-CAD.astro'
+
 ---
 
 <div class="hero">
@@ -21,6 +22,7 @@ import Logocad from '../components/logo-CAD.astro'
 
 <!-- edito and  result logical -->
 <script>
+    import Prism from 'prismjs';
     // Get code HTML
 const codeHTML = `
 <style>
@@ -140,6 +142,8 @@ const result = document.getElementById('result');
 
 codeInput.addEventListener('input', runCode);
 
+
+
 // Set iframe body
 const iframe = document.getElementById('result');
 const doc = iframe.contentDocument;
@@ -147,9 +151,14 @@ doc.body.innerHTML = codeHTML;
 
 // Set textarea body
 codeInput.innerHTML = codeHTML;
-
+Prism.highlightElement(codeInput);
 
 function runCode() {
+    // Set textarea value
+  const textarea = document.getElementById('code-input');  
+  textarea.value = initialCode;
+
+    
 
   // Get input value
   const code = codeInput.value; 
@@ -208,4 +217,5 @@ function addJS() {
   width: 50%;
   height: 300px;
 }
+
 </style>
