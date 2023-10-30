@@ -22,11 +22,9 @@ import Logocad from '../components/logo-CAD.astro'
 
 <!-- edito and  result logical -->
 <script>
-    import Prism from 'prismjs';
+    
     // Get code HTML
-const codeHTML = `
-<style>
-	.cont-cat { color: #606365;  align-items: center; margin: 0; justify-content: center; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .cat { font-size: 3rem; text-align: center;
+const codeHTML = `<style>.cont-cat { color: #606365;  align-items: center; margin: 0; justify-content: center; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .cat { font-size: 3rem; text-align: center;
 		font-family: serif;
 	} 
 	.ear-line { font-weight: 600; display: flex; justify-content: space-between; font-size: 2rem; margin-bottom: -38px; translate : 0px -1px;
@@ -151,14 +149,12 @@ doc.body.innerHTML = codeHTML;
 
 // Set textarea body
 codeInput.innerHTML = codeHTML;
-Prism.highlightElement(codeInput);
+
 
 function runCode() {
     // Set textarea value
   const textarea = document.getElementById('code-input');  
-  textarea.value = initialCode;
-
-    
+      
 
   // Get input value
   const code = codeInput.value; 
