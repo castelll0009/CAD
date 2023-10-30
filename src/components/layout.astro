@@ -1,0 +1,43 @@
+---
+interface Props{
+    title?: string 
+    pageDescription?: string 
+}
+
+const {title,pageDescription} = Astro.props
+
+
+import 'bootstrap/dist/css/bootstrap.css'
+import { Breadcrumb } from 'astro-bootstrap';
+import Navbar from './navbar.astro';
+---
+<style>            
+    body{
+        background: white;
+        color: silver;                
+    }
+    main{
+        padding: 5.6vw;
+    }
+
+</style>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />	
+
+		<meta name="generator" content={pageDescription} />
+		<title>CΔD | {title}</title>
+	</head>
+
+
+	<body>
+        <Navbar></Navbar>
+        <main>
+            <slot/>
+        </main>
+	    					
+	</body>
+</html>

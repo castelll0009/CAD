@@ -1,0 +1,22 @@
+---
+import '../styles/Layout.css'
+const  posts = await Astro.glob('./posts/*.md')
+console.log()
+---
+<Layout title="Blogs CAD" pageDescription="Read, Share and learn and with us" >
+    <h1>Blog</h1>
+    {
+    posts.map(post => {
+        return <a href={post.url} class="link">post.frontmatter.title</a>
+    })
+}
+</Layout>
+<style>
+    .link{
+        background: rgb(87, 87, 87);
+        color: black;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 4px;
+    }
+</style>

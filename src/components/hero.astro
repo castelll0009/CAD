@@ -1,13 +1,12 @@
 ---
 import Logocad from '../components/logo-CAD.astro'
-
 ---
 <style>    
 	.hero {
 	  display: flex;
 	}
 	.cont-comp-cat{
-	  display
+	  
 	}
 	.hero-left {
 	  flex: 1;
@@ -35,190 +34,19 @@ import Logocad from '../components/logo-CAD.astro'
 <div class="hero">
   <div class="hero-left">
     <div class=cont-comp-cat>        
-        <!-- Result -->  
-        <iframe id="result"></iframe>
-      <!-- <Logocad class='logocad-styles'><Logocad />  -->
+        <!-- Result -->  		
+        <!-- <iframe id="result"></iframe> -->
+      <Logocad ><Logocad /> 
     </div>
     <h1>Bienvenido a mi sitio web</h1>
-    <button class="btn btn-primary">Accion</button>
+    <button  class="btn btn-primary">Accion</button>
   </div>
   <div class="hero-right">
     <!-- Editor -->
     
-    <textarea id="code-input"></textarea>
-     <!-- <pre><code> -->
-        <pre><code>
-     </code>
-    </pre>
+    <!-- <textarea id="code-input"></textarea> -->
+     <!-- <pre><code> -->   
   </div>
 </div>
-
-<!-- edito and  result logical -->
-
-<script>
-   
-
-    // Get code HTML
-const codeHTML = `<style>.cont-cat { color: #606365;  align-items: center; margin: 0; justify-content: center; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .cat { font-size: 3rem; text-align: center;
-		font-family: serif;
-	} 
-	.ear-line { font-weight: 600; display: flex; justify-content: space-between; font-size: 2rem; margin-bottom: -38px; translate : 0px -1px;
-	} 
-	.face-line { 
-		font-size: 2.5rem;
-		letter-spacing: 2px;
-		margin-bottom: -30px;
-		font-weight: 500;
-		text-shadow: 0 0 0px black;
-		transform: translateY(1px);
-		transform: rotateX(37deg);
-		transform: rotateZ(18deg);
-		translate: 6px 1px;
-		z-index: 3;
-		position: relative;
-	} 
-	.body-line {
-		/* Mantén tus estilos existentes */
-		font-size: 4rem;
-		transform: rotateX(40deg);    
-		z-index: 1;
-		margin-top: -3px;    
-		color: transparent;
-		transition: all .2s ease;
-	}
-	.body-line:before {
-		content: 'Δ'; /* El carácter deseado */
-		position: absolute;  
-		top: 0%;
-		left: 0%; /* Coloca la letra a la derecha de la original */
-		color: #63f6fc; /* Color del borde */ 
-		z-index:-1;
-		translate: 5px -2px;
-		
-		
-	}
-	
-	.ear-left{ transform-origin: center; transform: rotate(346deg); transition: transform 0.2s; z-index: 1; translate: 11px -4px
-	} 
-	.ear-right { 
-		z-index: 1;
-		transform-origin: center;
-		transform: rotate(42deg);
-		transition: transform 0.2s;
-		translate: 2px 7px;
-		translate: 3px 2.8px;
-	}
-	/* .ear-left:hover{ transform: rotate(355deg); } .ear-right:hover { transform: rotate(0deg);
-	} */ 
-	.cat:hover .body-line::before {
-		
-	}
-	.cat:hover .ear-left { transform: rotate(330deg); margin-left:0px; margin-bottom: 0px; translate: 0px -0.5px
-	} .cat:hover .ear-right { transform: rotate(28deg); translate: 0px 0px;
-	}
-	.cat { font-size: 3rem; text-align: center; transition: transform 0.2s;
-	} .cat:hover .face-line { transform: rotateX(6deg); /* Ajusta el ángulo de inclinación que desees */ 
-		translate: 1.5px -1px;
-	}
-	.title {
-		font-size: 2rem;
-		font-weight: 600;
-		text-align: center;
-		margin:-10px; margin-top: -50px;
-		font-family: system-ui;
-	}
-	
-	.primary-color{ color: black; color: #636363;
-	}
-	.second-color{ color: #9fc37f; color: #00cd7a; color: black;
-	}
-	.third-color{ color: silver; color: #636363; color: orange; color: aqua; color: #00aeff;
-		
-	}
-	
-</style>
-
-<!-- CAT here -->
-<div class="cont-cat"  style="
-display: flex;
-flex-direction: column;
-align-items: center;
-margin: 0px;
-justify-content: flex-end;
-" >
-
-	<div class="cat"  style="
-	max-height: 70px;
-	z-index: 1;
-	line-height: normal;
-	" >
-	<div class="ear-line" >
-		<div class="ear-left" >^</div>
-		<div class="ear-right" >^</div>
-	</div>
-
-	<div class="face-line" >&lt;&gt;</div>
-	<div class="body-line third-color second-color"  style="">Δ</div></div>
-	<h1 class="title primary-color" style="
-	color: #636363;
-	font-size: 3rem;
-	max-height: 70px;
-	letter-spacing: -3px;
-	" >C __ D</h1>
-	
-</div>
-
-`;
-
-const codeInput = document.getElementById('code-input');
-const result = document.getElementById('result');
-
-codeInput.addEventListener('input', runCode);
-
-
-
-// Set iframe body
-const iframe = document.getElementById('result');
-const doc = iframe.contentDocument;
-doc.body.innerHTML = codeHTML;
-
-// Set textarea body
-codeInput.innerHTML = codeHTML;
-
-
-function runCode() {
-    // Set textarea value
-  const textarea = document.getElementById('code-input');  
-      
-
-  // Get input value
-  const code = codeInput.value; 
-  
-  // Create iframe document
-  const doc = result.contentDocument;
-  doc.body.innerHTML = '';
-  
-  // Add HTML
-  doc.body.innerHTML = code;
-  
-  // Add CSS
-  const styleTag = doc.createElement('style');
-  styleTag.textContent = addCSS();
-  doc.head.appendChild(styleTag);
-
-  // Add JS 
-  const scriptTag = doc.createElement('script');
-  scriptTag.textContent = addJS();
-  doc.body.appendChild(scriptTag);
-
-}
-function addCSS() {
-  // Return CSS input value
-}
-
-function addJS() {
-  // Sandbox JS code and return
-}
-</script>
 
 
