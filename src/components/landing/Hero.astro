@@ -1,10 +1,23 @@
-<header class="bg-zinc-900 flex flex-col  md:flex-row p-20 gap-3 text-left text-center md:text-left rounderd-xl">
-    <div>
+---
+import LogoCAD from "../logo-CAD.astro";
+
+---
+<style>
+    button:hover{
+        background: aqua;
+    }
+</style>
+<header class="bg-zinc-900 flex flex-co  md:flex-row p-20 gap-3 text-left text-center md:text-left rounderd-xl ">
+    <div class="flex-1">
         <h1 class="text-5xl font-bold pb-2">Change Something Rigth Now!</h1>
         <p class="my-4 text-2xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora deserunt amet illum, aliquam eum pariatur ipsum possimus soluta.</p>
-        <button class="bg-indigo-500  px-3 py-2 hover:bg-indigo-400 ">
+        <button class="bg-indigo-500  px-3 py-2" style="background: #00aeff;" >
             Run it up!
         </button >
     </div>
-    <img src="imgs/hero-img.svg" alt="" class="w-80">
+    <div class="flex-1 " style="align-self: center;" >
+        <LogoCAD zoom="2.5" theme="white" theme_text="#00aeff"></LogoCAD>
+    </div>
+    
+    <!-- <img src="imgs/hero-img.svg" alt="" class="w-80"> -->
 </header>

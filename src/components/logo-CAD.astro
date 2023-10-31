@@ -1,5 +1,17 @@
+---
+interface Props{
+    zoom?: string
+    theme?: string
+	theme_text?: string
+}
+const {zoom,theme,theme_text} = Astro.props;
+
+
+---
 <style>
-	.cont-cat { color: #606365;  align-items: center; margin: 0; justify-content: center; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .cat { font-size: 3rem; text-align: center;
+	.cont-cat {
+		
+		 color: #606365;  align-items: center; margin: 0; justify-content: center; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .cat { font-size: 3rem; text-align: center;
 		font-family: serif;
 	} 
 	.ear-line { font-weight: 600; display: flex; justify-content: space-between; font-size: 2rem; margin-bottom: -38px; translate : 0px -1px;
@@ -31,7 +43,7 @@
 		position: absolute;  
 		top: 0%;
 		left: 0%; /* Coloca la letra a la derecha de la original */
-		color: #63f6fc; /* Color del borde */ 
+		color: white; /* Color del borde */ 		
 		z-index:-1;
 		translate: 5px -2px;
 		
@@ -75,17 +87,21 @@
 	.third-color{ color: silver; color: #636363; color: orange; color: aqua; color: #00aeff;
 		
 	}
+
+	
 	
 </style>
 
 <!-- CAT here -->
-<div class="cont-cat"  style="
+<div class="cont-cat"  style=`
 display: flex;
 flex-direction: column;
 align-items: center;
 margin: 0px;
 justify-content: flex-end;
-" >
+zoom : ${zoom}
+
+ `>
 
 	<div class="cat"  style="
 	max-height: 70px;
@@ -93,17 +109,19 @@ justify-content: flex-end;
 	line-height: normal;
 	" >
 	<div class="ear-line" >
-		<div class="ear-left" >^</div>
-		<div class="ear-right" >^</div>
+		<div class="ear-left" style=`color: ${theme}` >^</div>
+		<div class="ear-right" style=`color: ${theme}` >^</div>
 	</div>
 
-	<div class="face-line" >&lt;&gt;</div>
-	<div class="body-line third-color second-color"  style="">Δ</div></div>
-	<h1 class="title primary-color" style="
+	<div class="face-line" style=`color: ${theme}` >&lt;&gt;</div>
+	<div class="body-line third-color second-color "  style=`color: ${theme}; color: ${theme_text}`>Δ</div></div>
+	<h1 class="title primary-color font-size-cat" style=`
 	color: #636363;
 	font-size: 3rem;
 	max-height: 70px;
 	letter-spacing: -3px;
-	" >C __ D</h1>
+	color: ${theme}
+	` >C __ D</h1>
 	
 </div>
+
