@@ -9,17 +9,21 @@ import LogoCAD from "../logo-CAD.astro";
     #button-action-hero:hover{
         /* background: #00aeff; */
     }
+
+    header{
+        background: rgba(192, 192, 192, 0.185);
+    }
 </style>
-<header class="bg-zinc-900 flex flex-col md:flex-row  md:flex-row p-20 gap-20 text-left text-center md:text-left rounderd-xl ">
+<header class="flex flex-col md:flex-row  md:flex-row p-20 gap-20 text-left text-center md:text-left rounderd-xl  text-current ">
     <div class="flex-1">
-        <h1 class="text-5xl font-bold pb-2">Change As You Need!</h1>
-        <p class="my-4 text-2xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora deserunt amet illum, aliquam eum pariatur ipsum possimus soluta.</p>
-        <button id="button-action-hero " class="px-10 py-2 bg-sky-600 hover:bg-sky-400 rounded-sm " >
+        <h1 class="text-5xl font-bold pb-2  text-current">Change As You Need!</h1>
+        <p class="my-4 text-2xl text-current">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora deserunt amet illum, aliquam eum pariatur ipsum possimus soluta.</p>
+        <button id="button-action-hero " class="px-10 py-2 bg-sky-600 hover:bg-sky-400 rounded-sm text-zinc-300 font-bold" >
             Run it up!
         </button >
     </div>
     <div class="flex-1 " style="align-self: center;" >
-        <LogoCAD zoom="2.5" theme="white" theme_text="#00aeff"></LogoCAD>
+        <LogoCAD zoom="2.5" theme="text-current" theme_text="#00aeff"></LogoCAD>
     </div>
     
     <!-- <img src="imgs/hero-img.svg" alt="" class="w-80"> -->
