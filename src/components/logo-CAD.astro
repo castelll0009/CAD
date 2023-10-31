@@ -28,6 +28,7 @@ const {zoom,theme,theme_text} = Astro.props;
 		translate: 6px 1px;
 		z-index: 3;
 		position: relative;
+		transition: all ease 0.1s;
 	} 
 	.body-line {
 		/* Mantén tus estilos existentes */
@@ -46,6 +47,7 @@ const {zoom,theme,theme_text} = Astro.props;
 		color: white; /* Color del borde */ 		
 		z-index:-1;
 		translate: 5px -2px;
+		translate: 4px -1px;
 		
 		
 	}
@@ -68,7 +70,7 @@ const {zoom,theme,theme_text} = Astro.props;
 	.cat:hover .ear-left { transform: rotate(330deg); margin-left:0px; margin-bottom: 0px; translate: 0px -0.5px
 	} .cat:hover .ear-right { transform: rotate(28deg); translate: 0px 0px;
 	}
-	.cat { font-size: 3rem; text-align: center; transition: transform 0.2s;
+	.cat { font-size: 3rem; text-align: left; transition: transform 0.2s; 
 	} .cat:hover .face-line { transform: rotateX(6deg); /* Ajusta el ángulo de inclinación que desees */ 
 		translate: 1.5px -1px;
 	}
@@ -104,7 +106,7 @@ zoom : ${zoom}
  `>
 
 	<div class="cat"  style="
-	max-height: 70px;
+	max-height: 62px;
 	z-index: 1;
 	line-height: normal;
 	" >
@@ -118,10 +120,9 @@ zoom : ${zoom}
 	<h1 class="title primary-color font-size-cat" style=`
 	color: #636363;
 	font-size: 3rem;
-	max-height: 70px;
-	letter-spacing: -3px;
+	max-height: 70px;	
 	color: ${theme}
-	` >C __ D</h1>
+	` >C&nbsp;&nbsp;&nbsp;D</h1>
 	
 </div>
 
