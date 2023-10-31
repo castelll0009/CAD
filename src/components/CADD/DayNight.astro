@@ -6,14 +6,6 @@
 const {fontsize}= Astro.props;
 ---
 
-<input
-  type="checkbox"
-  class="sr-only"
-  id="darkmode-toggle"
->
-<label for="darkmode-toggle" class="toggle" style=`font-size: ${fontsize}`>
-  <span>Toggle dark mode</span>
-</label>
 
 <style>
   .toggle{
@@ -24,7 +16,7 @@ const {fontsize}= Astro.props;
     display: block;
     height: 2em;
     position: relative;
-    width: 3.75em;
+   
   }
   .toggle span {
     background-color: currentColor;
@@ -72,19 +64,7 @@ const {fontsize}= Astro.props;
     left: 2em;
   }
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+                          
   .sr-only {
     position: absolute;
     left: -9999px;
@@ -99,3 +79,10 @@ const {fontsize}= Astro.props;
   }
   </style>
   
+
+<input  type="checkbox"   class="sr-only"   id="darkmode-toggle"
+>
+<label for="darkmode-toggle" class="toggle" style=`font-size: ${fontsize}`>
+  <span>Toggle dark mode</span>
+</label>
+</input>
