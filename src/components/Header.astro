@@ -7,32 +7,26 @@ Dropdown,
 DropdownItems,
 DropdownSubmenu,
 } from "astro-navbar";
-import LogoOnly from "./logo-only.astro";
-
-import DayNight from './+CAD/DayNight.astro';
-
-const { darkMode } = Astro.props;
+import LogoOnly from '../components/logo-only.astro'
+import DayNight from "./+CAD/DayNight.astro";
 ---
-<style>
-   body {
-     background: {darkMode ? 'black' : 'white'};
-     color: {darkMode ? 'white' : 'black'};
-   }
- </style>
+
 
 
 <header class="lg:flex justify-between p-5  gap-5 mx-auto container">
    <Astronav closeOnClick>
       <div class="flex w-full items-center  lg:w-auto justify-between">
          <a class="-mt-2" ><LogoOnly   zoom="0" theme="white" theme_text="#00aeff" face="none" ></a>
-            <DayNight>
-        
-            </DayNight>
+            <div style="display: position: absolute; " >
+               <DayNight fontSize="1rem"></DayNight>
+            </div>
          <div class="block lg:hidden">
             <MenuIcon class=" md:w-8 md:h-8  text-white" />
          </div>
       </div>
-          
+      
+   
+   
      
       <MenuItems class="hidden lg:flex">
          <ul class="flex flex-col lg:flex-row lg:gap-5 mt-5">
