@@ -17,7 +17,7 @@
     "@types/bootstrap": "^5.2.8",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
-    "astro": "^3.3.4",
+    "astro": "^3.4.0",
     "astro-bootstrap": "^0.6.1",
     "astro-navbar": "^2.3.0",
     "boostrap": "^2.0.0",
@@ -30,5 +30,10 @@
     "react-dom": "^18.2.0",
     "svelte": "^4.2.2",
     "tailwindcss": "^3.3.5"
-  }
+  },
+  "description": "```sh npm create astro@latest -- --template minimal ```",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
