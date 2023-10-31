@@ -1,17 +1,18 @@
 ---
-interface Props {
-  fontSize?: string
+  interface Props{
+  fontsize?: string
 }
 
-const {fontSize}= Astro.props
+const {fontsize}= Astro.props;
 ---
+
 
 <input
   type="checkbox"
   class="sr-only"
   id="darkmode-toggle"
 >
-<label for="darkmode-toggle" class="toggle" style=`font-size: ${fontSize}`>
+<label for="darkmode-toggle" class="toggle" style=`font-size: ${fontsize}`>
   <span>Toggle dark mode</span>
 </label>
 
