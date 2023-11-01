@@ -4,7 +4,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  ssr: false,
   integrations: [react(), tailwind()],
   site: 'https://castelll0009.github.io',
   base: '/CAD'
