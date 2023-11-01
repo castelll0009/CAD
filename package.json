@@ -8,9 +8,9 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "gh-pages -d dist",
-    "deploycad": "npm run build && gh-pages -d dist",
-    "deploynpx": "npx gh-pages -d dist"
+    "deploy": "gh-pages -d CAD",
+    "deploycad": "npm run build && gh-pages -d CAD",
+    "deploynpx": "npx gh-pages -d CAD"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.0",
