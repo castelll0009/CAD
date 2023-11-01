@@ -7,9 +7,8 @@ Dropdown,
 DropdownItems,
 DropdownSubmenu,
 } from "astro-navbar";
-import LogoOnly from '../components/logo-only.astro'
+import LogoOnly from '../components/logo-only.astro';
 import DayNight from "../components/CADD/DayNight.astro";
-import ThemeIcon from '../components/CADD/ThemeIcon.astro';
 ---
 
 
@@ -20,14 +19,14 @@ import ThemeIcon from '../components/CADD/ThemeIcon.astro';
       <div class="flex w-full items-center  lg:w-auto justify-between">
          <a class="-mt-2" ><LogoOnly   zoom="0" theme="white" theme_text="#00aeff" face="none" ></a>
             <div class=" " >
-               <DayNight fontsize="1rem"></DayNight>
+               
             </div>
          <div class="block lg:hidden">
            
             <MenuIcon class=" md:w-8 md:h-8  text-current" />
          </div>
       </div>
-      <ThemeIcon></ThemeIcon>              
+      <DayNight></DayNight>              
      
       <MenuItems class="hidden lg:flex">
        

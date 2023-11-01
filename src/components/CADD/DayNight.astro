@@ -1,90 +1,56 @@
 ---
-  interface Props{
-  fontsize?: string
-}
-
-const {fontsize}= Astro.props;
+const isDark = false;
 ---
-
-
-<style>
-  .toggle{
-    font-size: 2rem;
-    border: 0.125em solid silver;
-    border-radius: 2em;
-    cursor: pointer;
-    display: flex;
-    height: 2em;
-    position: relative;
-    width: 3.75em;
-    /* translate: 45vw 0%; */
-    margin-left: 45vw;   
-  }
-  .toggle span {
-    background-color: currentColor;
-    border-radius: 2em;
-    display: block;
-    height: 1.5em;
-    left: .25em;
-    overflow: hidden;
-    position: absolute;
-    top: .25em;
-    text-indent: -9999px;
-    transition: left .25s;
-    width: 1.5em;
-    z-index: 2;
-  }
+<button class="pl-1" id="themeToggle">
+    <svg width="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path class="sun" fill-rule="evenodd" d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0 1.5a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm12-7a.8.8 0 0 1-.8.8h-2.4a.8.8 0 0 1 0-1.6h2.4a.8.8 0 0 1 .8.8zM4 12a.8.8 0 0 1-.8.8H.8a.8.8 0 0 1 0-1.6h2.5a.8.8 0 0 1 .8.8zm16.5-8.5a.8.8 0 0 1 0 1l-1.8 1.8a.8.8 0 0 1-1-1l1.7-1.8a.8.8 0 0 1 1 0zM6.3 17.7a.8.8 0 0 1 0 1l-1.7 1.8a.8.8 0 1 1-1-1l1.7-1.8a.8.8 0 0 1 1 0zM12 0a.8.8 0 0 1 .8.8v2.5a.8.8 0 0 1-1.6 0V.8A.8.8 0 0 1 12 0zm0 20a.8.8 0 0 1 .8.8v2.4a.8.8 0 0 1-1.6 0v-2.4a.8.8 0 0 1 .8-.8zM3.5 3.5a.8.8 0 0 1 1 0l1.8 1.8a.8.8 0 1 1-1 1L3.5 4.6a.8.8 0 0 1 0-1zm14.2 14.2a.8.8 0 0 1 1 0l1.8 1.7a.8.8 0 0 1-1 1l-1.8-1.7a.8.8 0 0 1 0-1z"/>
+      <path class="moon" fill-rule="evenodd" d="M16.5 6A10.5 10.5 0 0 1 4.7 16.4 8.5 8.5 0 1 0 16.4 4.7l.1 1.3zm-1.7-2a9 9 0 0 1 .2 2 9 9 0 0 1-11 8.8 9.4 9.4 0 0 1-.8-.3c-.4 0-.8.3-.7.7a10 10 0 0 0 .3.8 10 10 0 0 0 9.2 6 10 10 0 0 0 4-19.2 9.7 9.7 0 0 0-.9-.3c-.3-.1-.7.3-.6.7a9 9 0 0 1 .3.8z"/>
+    </svg>
+  </button>
   
-  .toggle::before,
-  .toggle::after {
-    content: '';
-    display: block;
-    border-radius: 1em;
-    position: absolute;
-    z-index: 1;
-  }
-  
-  .toggle::after {
-    box-shadow: .25em .25em #5901d8;
-    height: 1.125em;
-    right: .9em;
-    top: .125em;
-    width: 1.125em;
-  }
-  
-  .toggle::before {
-    background-color: #ffc409;
-    height: .625em;
-    outline: .25em dotted #ffc409;
-    outline-offset: .125em;
-    left: .7em;
-    top: .7em;
-    width: .625em;
-  }
-  
-  input:checked ~ .toggle span {
-    left: 2em;
-  }
-  
-                          
-  .sr-only {
-    position: absolute;
-    left: -9999px;
-    opacity: 0;
-  }
-
+  <style>
+    #themeToggle {
+      border: 0;
+      background: none;
+    }
+    .sun { fill: black; }
+    .moon { fill: transparent; }
   
   
-  body:has(#darkmode-toggle:checked) {
-    background-position: 100% 100%;
-    color: #d0d0d0;
-  }
+    :global(.dark) .sun { fill: transparent; }
+    :global(.dark) .moon { fill: white; }
   </style>
-  
 
-<input  type="checkbox"   class="sr-only"   id="darkmode-toggle"
->
-<label for="darkmode-toggle" class="toggle" style=`font-size: ${fontsize}`>
-  <span>Toggle dark mode</span>
-</label>
-</input>
+<script is:inline>
+    const theme = (() => {
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        return localStorage.getItem('theme');
+      }
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {        
+        return 'dark';        
+      }
+        return 'light';
+    })();
+  
+    if (theme === 'light') {
+      document.documentElement.classList.remove('dark');
+      
+    } else {
+      document.documentElement.classList.add('dark');
+      
+    }
+  
+    window.localStorage.setItem('theme', theme);
+  
+    const handleToggleClick = () => {              
+      const element = document.documentElement;
+      element.classList.toggle("dark");
+  
+       isDark = element.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+                
+    }
+    
+  
+    document.getElementById("themeToggle").addEventListener("click", handleToggleClick);
+  </script>
