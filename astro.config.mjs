@@ -8,5 +8,5 @@ export default defineConfig({
   ssr: false,
   integrations: [react(), tailwind()],
   site: 'https://castelll0009.github.io',
-  base: '/Astro-C-D'
+  base: '/CAD'
 });
