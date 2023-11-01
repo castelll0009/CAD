@@ -1,0 +1,13 @@
+html{
+    background-color: white;
+    color: #202020;
+    transition: all ease-in-out 0.3s;
+  }
+html.dark {
+    background-color: #202020;
+    color: #fff;
+  }
+  
+  .dark .nav-links a {
+    color: #fff;
+  }
