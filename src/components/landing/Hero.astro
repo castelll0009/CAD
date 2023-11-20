@@ -1,10 +1,8 @@
 ---
 import LogoCAD from "../logo-CAD.astro";
 const  themeColor  = 'white';
-const zoomResolution = '0'; 
+const zoomResolution = '1.5'; 
 const isDark = false;
-
-
 ---
 <script is:inline>import { transitionEnabledOnThisPage } from "astro:transitions/client";
 
@@ -32,14 +30,12 @@ const isDark = false;
 <header id="header-hero" class="flex flex-col md:flex-row  md:flex-row p-20 gap-5 text-left text-center md:text-left rounderd-xl ">
     <div class="flex-1">
         <h1 class="text-5xl font-bold pb-2">Change As You Need!</h1>
-        <p class="my-4 text-2xl">Welcome to CAD Codeltad! We merge code, creativity and marketing to boost your digital success. Explore, evolve, we gonna give you something really good.</p>
-        <button id="button-action-hero " class="px-10 py-2 bg-sky-600 hover:bg-sky-400 rounded-sm " >
-            Run it up!
-        </button >
+        <p class="my-4 text-2xl">We merge code, creativity and marketing to boost your digital success. Explore, evolve, we gonna give you something really good.</p>
+       
     </div>
 
 
-    <div  class="flex-1" style="align-self: center;" data-zoom={zoomResolution}> 
+    <div  class="flex-1" style="align-self: center; display: flex; flex-direction: column;" data-zoom={zoomResolution}> 
       
         <script is:inline>    
             let zoom = '0';
@@ -58,7 +54,16 @@ const isDark = false;
                    
         </script>    
          <LogoCAD zoom={zoomResolution} theme={themeColor} theme_text="#00aeff"></LogoCAD>
+         <button id="button-action-hero " style="max-width: 150px ;" class="text-white  mx-auto  px-10 py-2 bg-sky-600 hover:bg-sky-400 rounded-sm text-center  " >
+            Run it up!
+        </button >
              
+    </div>
+
+    <div class="flex-1 text-right">
+        <h1 class="text-5xl font-bold pb-2">Quickly Adds</h1>
+        <p class="my-4 text-2xl">With cutting-edge Motion Graphics, your product stands out and sells in just 5 seconds.</p>
+       
     </div>
     
     
