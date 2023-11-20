@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="Home"><title>C∆D | Home</title><link rel="stylesheet" href="/CAD/_astro/index.c11af7a0.css" /></head><body><header class="lg:flex justify-between p-5  gap-5 mx-auto container md:justify-center"><div class="flex w-full items-center  lg:w-auto justify-between"><a class="-mt-2"><!-- CAT here --><div class="cont-cat" style="display: flex;
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="Home"><title>C∆D | Home</title><link rel="stylesheet" href="/CAD/_astro/index.28696d27.css" /></head><body><header class="lg:flex justify-between p-5  gap-5 mx-auto container md:justify-center"><div class="flex w-full items-center  lg:w-auto justify-between"><a class="-mt-2"><!-- CAT here --><div class="cont-cat" style="display: flex;
 flex-direction: column;
 align-items: center;
 margin: 0px;
@@ -205,30 +205,51 @@ function handleCloseOnClick() {
       });
     });
 }
-})();</script></header><main class="mx-auto container md:pt-10"><script>
+})();</script></header><main class="mx-auto container md:pt-10"><script>import { transitionEnabledOnThisPage } from "astro:transitions/client";
+
     const element = document.documentElement;
-      element.classList.toggle("dark");
-        isDark = element.classList.contains("dark");
-      localStorage.setItem("theme", isDark ? "dark" : "light");     
+    element.classList.toggle("dark");
+    isDark = element.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");     
     //    alert(isDark)   ;
-     // Asigna un valor apropiado a themeColor
-  const themeColor = isDark ? 'white' : 'black';
+    // Asigna un valor apropiado a themeColor
+    const themeColor = isDark ? 'white' : 'black';
     // alert(themeColor)
-</script><header id="header-hero" class="flex flex-col md:flex-row  md:flex-row p-20 gap-5 text-left text-center md:text-left rounderd-xl " data-astro-cid-7vszemnk><div class="flex-1" data-astro-cid-7vszemnk><h1 class="text-5xl font-bold pb-2" data-astro-cid-7vszemnk>Change As You Need!</h1><p class="my-4 text-2xl" data-astro-cid-7vszemnk>Welcome to CAD Codeltad! We merge code, creativity and marketing to boost your digital success. Explore, evolve, we gonna give you something really good.</p><button id="button-action-hero " class="px-10 py-2 bg-sky-600 hover:bg-sky-400 rounded-sm " data-astro-cid-7vszemnk>
-Run it up!
-</button></div><div class="flex-1 " style="align-self: center;" data-astro-cid-7vszemnk><!-- CAT here --><div class="cont-cat" style="display: flex;
+</script><header id="header-hero" class="flex flex-col md:flex-row  md:flex-row p-20 gap-5 text-left text-center md:text-left rounderd-xl " data-astro-cid-7vszemnk><div class="flex-1" data-astro-cid-7vszemnk><h1 class="text-5xl font-bold pb-2" data-astro-cid-7vszemnk>Change As You Need!</h1><p class="my-4 text-2xl" data-astro-cid-7vszemnk>We merge code, creativity and marketing to boost your digital success. Explore, evolve, we gonna give you something really good.</p></div><div class="flex-1" style="align-self: center; display: flex; flex-direction: column;" data-zoom="1" data-astro-cid-7vszemnk><script>    
+            let zoom = '0';
+            const mediaQuery = window.matchMedia("(max-width: 768px)");    
+            if (mediaQuery.matches) {
+                zoom = '0';
+                console.log("You are using a mobile device!"+zoom);
+                
+            } else {
+                zoom = '2.5';
+                console.log("You are not using a mobile device"+zoom);                
+                
+            }
+            document.querySelector('[data-zoom]').setAttribute('data-zoom', zoom);
+            console.log('After than all the zoom gonna be is : '+zoom);
+                   
+        </script><!-- CAT here --><div class="cont-cat" style="display: flex;
 flex-direction: column;
 align-items: center;
 margin: 0px;
 justify-content: flex-end;
-zoom : 2.5" data-astro-cid-7abt7ser><div class="cat" style="
+zoom : 1" data-astro-cid-7abt7ser><div class="cat" style="
 	max-height: 62px;
 	z-index: 1;
 	line-height: normal;
-	" data-astro-cid-7abt7ser><div class="ear-line" data-astro-cid-7abt7ser><div class="ear-left" style="color: white" data-astro-cid-7abt7ser>^</div><div class="ear-right" style="color: white" data-astro-cid-7abt7ser>^</div></div><div class="face-line" style="color: white" data-astro-cid-7abt7ser>&lt;&gt;</div><div class="body-line third-color second-color " style="color: white; color: #00aeff" data-astro-cid-7abt7ser>Δ</div></div><h1 class="title primary-color font-size-cat" style="color: #636363;
+	" data-astro-cid-7abt7ser><div class="ear-line" data-astro-cid-7abt7ser><div class="ear-left" style="color: rgb(32 32 32);" data-astro-cid-7abt7ser>^</div><div class="ear-right" style="color: rgb(32 32 32);" data-astro-cid-7abt7ser>^</div></div><div class="face-line" style="color: rgb(32 32 32);" data-astro-cid-7abt7ser>&lt;&gt;</div><div class="body-line third-color second-color " style="color: rgb(32 32 32);; color: #00aeff" data-astro-cid-7abt7ser>Δ</div></div><h1 class="title primary-color font-size-cat" style="color: #636363;
 	font-size: 3rem;
 	max-height: 70px;	
-	color: white" data-astro-cid-7abt7ser>C&nbsp;&nbsp;&nbsp;D</h1></div></div><!-- <img src="imgs/hero-img.svg" alt="" class="w-80"> --></header><section class="flex flex-col md:flex-row py-10 text-center gap-4 md:p-20 gap-y-10"><div class="flex-1 grid grid-cols-2"><div class="text-center"><img src="favicon.svg" class="w-20 m-auto" alt=""><p class="mt-4">Dev management</p></div><div class="text-center"><img src="favicon.svg" class="w-20 m-auto" alt=""><p class="mt-4">Dev management</p></div><div class="text-center"><img src="favicon.svg" class="w-20 m-auto" alt=""><p class="mt-4">Dev management</p></div><div class="text-center"><img src="favicon.svg" class="w-20 m-auto" alt=""><p class="mt-4">Dev management</p></div></div><div class="flex flex-1 flex-col gap-y-10"><h2 class="text-5xl font-bold">Lorem ipsum, dolor </h2><p class="text-3xl  text-current">
+	color: rgb(32 32 32);" data-astro-cid-7abt7ser>C&nbsp;&nbsp;&nbsp;D</h1></div><button id="button-action-hero " style="max-width: 150px ;" class="text-white  mx-auto  px-10 py-2 bg-sky-600 hover:bg-sky-400 rounded-sm text-center  " data-astro-cid-7vszemnk>
+Run it up!
+</button></div><!-- <div class="flex-1 text-right">
+        <h1 class="text-5xl font-bold pb-2">Quickly Adds</h1>
+        <p class="my-4 text-2xl">With cutting-edge Motion Graphics, your product stands out and sells in just 5 seconds.</p>
+       
+    </div>
+     --></header><section class="flex flex-col md:flex-row py-10 text-center gap-4 md:p-20 gap-y-10"><div class="flex-1 grid grid-cols-2"><div class="text-center"><img src="favicon.svg" class="w-20 m-auto" alt=""><p class="mt-4">Dev management</p></div><div class="text-center"><img src="favicon.svg" class="w-20 m-auto" alt=""><p class="mt-4">Dev management</p></div><div class="text-center"><img src="favicon.svg" class="w-20 m-auto" alt=""><p class="mt-4">Dev management</p></div><div class="text-center"><img src="favicon.svg" class="w-20 m-auto" alt=""><p class="mt-4">Dev management</p></div></div><div class="flex flex-1 flex-col gap-y-10"><h2 class="text-5xl font-bold">Lorem ipsum, dolor </h2><p class="text-3xl  text-current">
 sit amet consectetur adipisicing elit. Excepturi, deleniti esse. Illum impedit accusantium dolor rerum cumque, esse suscipit quaerat.
 </p></div></section><div class="grid md:grid-cols-3 gap-4 p-4 text-white"><div class="bg-slate-800 p-10 rounded-xl"><h2 class="text-2xl font-bold my-4">Encrypted</h2><p>Your data is Encripted and stored in a secure database</p></div><div class="bg-slate-800 p-10 rounded-xl"><h2 class="text-2xl font-bold my-4">Quick Delta </h2><p>You can use  diferents components  from  web sites builded with astro and copy CD-comps.</p></div><div class="bg-slate-800 p-10 rounded-xl"><h2 class="text-2xl font-bold my-4">Encrypted</h2><p>Your data is Encripted and stored in a secure database</p></div><div class="bg-slate-800 p-10 rounded-xl"><h2 class="text-2xl font-bold my-4">Quick Delta </h2><p>You can use  diferents components  from  web sites builded with astro and copy CD-comps.</p></div></div><section class="bg-zinc-900 p-20 rounded-xl my-4 text-center text-white"><h2 class="text-xl font-bold my-5">About Us
 </h2><p class="text-zinc-300">

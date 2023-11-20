@@ -13,8 +13,10 @@ const {zoom,theme,theme_text} = Astro.props;
 		
 		 color: #606365;  align-items: center; margin: 0; justify-content: center; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .cat { font-size: 3rem; text-align: center;
 		font-family: serif;
+		font-weight: 400; 
+		letter-spacing: 2px;
 	} 
-	.ear-line { font-weight: 600; display: flex; justify-content: space-between; font-size: 2rem; margin-bottom: -38px; translate : 0px -1px;
+	.ear-line { display: flex; justify-content: space-between; font-size: 2rem; margin-bottom: -38px; translate : 0px -1px;
 	} 
 	.face-line { 
 		font-size: 2.5rem;
@@ -38,6 +40,7 @@ const {zoom,theme,theme_text} = Astro.props;
 		margin-top: -3px;    
 		color: transparent;
 		transition: all .2s ease;
+		text-align: center;
 	}
 	.body-line:before {
 		content: 'Δ'; /* El carácter deseado */
@@ -47,9 +50,7 @@ const {zoom,theme,theme_text} = Astro.props;
 		color: white; /* Color del borde */ 		
 		z-index:-1;
 		translate: 5px -2px;
-		translate: 4px -1px;
-		
-		
+		translate: 4px -1px;				
 	}
 	
 	.ear-left{ transform-origin: center; transform: rotate(346deg); transition: transform 0.2s; z-index: 1; translate: 11px -4px
