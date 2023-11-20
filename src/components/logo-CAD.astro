@@ -26,7 +26,7 @@ const {zoom,theme,theme_text} = Astro.props;
 		transform: translateY(1px);
 		transform: rotateX(37deg);
 		transform: rotateZ(18deg);
-		translate: 6px 1px;
+		translate: 4px 2px;
 		z-index: 3;
 		position: relative;
 		transition: all ease 0.1s;
@@ -48,7 +48,7 @@ const {zoom,theme,theme_text} = Astro.props;
 		top: 0%;
 		left: 0%; /* Coloca la letra a la derecha de la original */
 		color: white; /* Color del borde */ 		
-		color: #00fafd;
+		color: #00fafd;		
 		z-index: -1;
 		translate: 5px -2px;
 		translate: 4.5px -1px;			
@@ -69,12 +69,14 @@ const {zoom,theme,theme_text} = Astro.props;
 	.cat:hover .body-line::before {
 		
 	}
-	.cat:hover .ear-left { transform: rotate(338deg); margin-left:0px; margin-bottom: 0px; translate: 1px -2px
-	} .cat:hover .ear-right { transform: rotate(22deg); translate: 2px -1.5px;
+	.cat:hover .ear-left { transform: rotate(338deg); margin-left:0px; margin-bottom: 0px; translate: 0px -1.5px
+	} .cat:hover .ear-right { transform: rotate(22deg); translate: 0px -1px;
 	}
 	.cat { font-size: 3rem; text-align: left; transition: transform 0.2s; 
-	} .cat:hover .face-line { transform: rotateX(6deg); /* Ajusta el ángulo de inclinación que desees */ 
-		translate: 1.5px -1px;
+		
+	} 
+	.cat:hover .face-line { transform: rotateX(6deg); /* Ajusta el ángulo de inclinación que desees */ 
+		translate: 0px 0px;
 	}
 	.title {
 		font-size: 2rem;
@@ -123,6 +125,7 @@ zoom : ${zoom}
 	color: #636363;
 	font-size: 3rem;
 	max-height: 70px;	
+	font-weight: 400;
 	color: ${theme}
 	` >C&nbsp;&nbsp;&nbsp;D</h1>
 	
