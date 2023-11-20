@@ -1,22 +1,21 @@
 ---
 import LogoCAD from "../logo-CAD.astro";
-const  themeColor  = '#676767';
+// const  themeColor  = '#676767';
 const zoomResolution = '1'; 
 const isDark = false;
+const themeColor = isDark ? '#ffffff' : '#676767';
 ---
 <script is:inline>import { transitionEnabledOnThisPage } from "astro:transitions/client";
 
     const element = document.documentElement;
     element.classList.toggle("dark");
     isDark = element.classList.contains("dark");
-    localStorage.setItem("theme", isDark ? "dark" : "light");     
+    // localStorage.setItem("theme", isDark ? "dark" : "light");     
     //    alert(isDark)   ;
     // Asigna un valor apropiado a themeColor
-    const themeColor = isDark ? 'white' : 'black';
+    // const themeColor = isDark ? 'white' : 'black';
     // alert(themeColor)
 </script>
-
-
 
 <style>
     button{
@@ -52,9 +51,34 @@ const isDark = false;
             document.querySelector('[data-zoom]').setAttribute('data-zoom', zoom);
             console.log('After than all the zoom gonna be is : '+zoom);
                    
-        </script>    
+        </script>   
+<script is:inline>
+    function toggleDarkMode() {
+        const elementT = document.documentElement;
+        const isDarkMode = elementT.classList.contains("dark");
+        
+        // Asegúrate de realizar las acciones necesarias según el valor de isDarkMode
+        const themeColor = isDarkMode ? '#ffffff' : '#676767';
+        alert(isDarkMode+themeColor);
+          // Actualiza el tema del LogoCAD
+          const logoCAD = document.querySelector('LogoCAD');
+        if (logoCAD) {
+            logoCAD.setAttribute('theme', themeColor);
+        }
+        alert(isDarkMode+themeColor);
+    }
+    
+    // Ejecutar cuando se carga la página
+    document.addEventListener('DOMContentLoaded', toggleDarkMode);
+
+    // Ejecutar cuando cambia el tema
+    document.addEventListener('theme-change', toggleDarkMode);
+</script>
+
+         
+    
          <LogoCAD zoom={zoomResolution} theme={themeColor} theme_text="#00aeff"></LogoCAD>
-         <button id="button-action-hero " style="max-width: 155px ; color: #676767; border-top: 1px solid #67676700  " class="  mx-auto  px-10 py-2 bg-transparent hover:bg-sky-400 rounded-sm text-center  " >
+         <button id="button-action-hero " style="max-width: 155px ; color: themeColor; border-top: 1px solid #67676700  " class="  mx-auto  px-10 py-2 bg-transparent hover:bg-sky-400 rounded-sm text-center  " >
             Click here!
         </button >
              
