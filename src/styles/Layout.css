@@ -1,3 +1,7 @@
+/* styles/global.css */
+
+@import '@fortawesome/fontawesome-free/css/all.css';
+
 html{
     background-color: white;
     color: #202020;

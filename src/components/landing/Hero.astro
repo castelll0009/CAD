@@ -58,14 +58,13 @@ const themeColor = isDark ? '#ffffff' : '#676767';
         const isDarkMode = elementT.classList.contains("dark");
         
         // Asegúrate de realizar las acciones necesarias según el valor de isDarkMode
-        const themeColor = isDarkMode ? '#ffffff' : '#676767';
-        alert(isDarkMode+themeColor);
+        const themeColor = isDarkMode ? '#ffffff' : '#676767';        
           // Actualiza el tema del LogoCAD
           const logoCAD = document.querySelector('LogoCAD');
         if (logoCAD) {
             logoCAD.setAttribute('theme', themeColor);
         }
-        alert(isDarkMode+themeColor);
+        // alert(isDarkMode+themeColor);
     }
     
     // Ejecutar cuando se carga la página
